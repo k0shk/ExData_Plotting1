@@ -14,6 +14,9 @@ sub_data$Global_active_power <- f_gap
 png(file = "plot4.png", width = 480, height = 480)
 par(mfcol=c(2,2))
 
+Sys.setenv("LANGUAGE"="En")
+Sys.setlocale(locale = "en_US.UTF-8")
+
 #graph 1
 plot(sub_data$dt, sub_data$Global_active_power, type = "n", ylab = "Global Active Power (kilowatts)", xlab = "")
 lines(sub_data$dt, sub_data$Global_active_power)

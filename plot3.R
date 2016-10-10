@@ -2,6 +2,10 @@ fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_powe
 download.file(fileURL, destfile = "d.zip", method = "curl")
 data <- read.csv(unzip("d.zip"), sep = ";", header = TRUE, na.strings=c("NA","?"))
 head(data)
+
+Sys.setenv("LANGUAGE"="En")
+Sys.setlocale(locale = "en_US.UTF-8")
+
 x <- paste (data$Date, data$Time)
 f_DateTime <- as.Date(strptime(x, "%d/%m/%Y %H:%M:%S"))
 data$Date <- f_date
